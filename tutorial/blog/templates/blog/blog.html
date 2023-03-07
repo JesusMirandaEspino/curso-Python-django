@@ -9,6 +9,14 @@
     <main>
         <h1>Bienvenidos a mi blog</h1>
         <h2>Archivo personal de mis entradas</h2>
+        <p>Estas son las entradas más recientes.</p>
+            {% for post in posts %}
+            <div>
+                <h3>{{ post.title }}</h3>
+                <span class="date">{{ post.created }}</span>
+                <p>{{ post.content }}</p>
+            </div>
+            {% endfor %}
     </main>
 </body>
 </html>
