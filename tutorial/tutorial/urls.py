@@ -18,7 +18,7 @@ from django.urls import path
 from blog.views import home, post
 
 urlpatterns = [
-    path('', home),
-    path('blog/<id>', post),
+    path('', home, name="home"),          # editado
+    path('blog/<id>', post, name="post"),  # editado
     path('admin/', admin.site.urls),
 ]

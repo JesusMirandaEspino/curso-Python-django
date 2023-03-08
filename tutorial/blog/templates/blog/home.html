@@ -8,7 +8,7 @@
         <span class="date">{{ post.created }}</span>
         <p>
             {{ post.content|truncatewords:"20" }} 
-            <a href="/blog/{{post.id}}">Leer más</a>
+            <a href="{% url 'post' id=post.id %}">Leer más</a>
         </p>
     </div>
     {% endfor %}

@@ -6,6 +6,6 @@
     <h3>{{ post.title }}</h3>
     <span class="date">{{ post.created }}</span>
     <p>{{ post.content }}</p>
-    <a href="/">Volver a la portada</a>
+<a href="{% url 'home' %}">Volver a la portada</a>
 </div>
 {% endblock %}
