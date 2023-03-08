@@ -1,25 +1,15 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
-</head>
-<body>
-    <main>
-        <h1>Bienvenidos a mi blog</h1>
-        <h2>Archivo personal de mis entradas</h2>
-        <p>Estas son las entradas más recientes.</p>
-            {% for post in posts %}
-            <div>
-                <h3>{{ post.title }}</h3>
-                <span class="date">{{ post.created }}</span>
-                <p>
-                    {{ post.content|truncatewords:"20" }} 
-                    <a href="/blog/{{post.id}}">Leer más</a>
-                </p>
-            </div>
-            {% endfor %}
-    </main>
-</body>
-</html>
+{% extends 'blog/base.html' %}
+{% block title %} Blog {% endblock %}
+
+{% block content %}
+    {% for post in posts %}
+    <div>
+        <h3>{{ post.title }}</h3>
+        <span class="date">{{ post.created }}</span>
+        <p>
+            {{ post.content|truncatewords:"20" }} 
+            <a href="/blog/{{post.id}}">Leer más</a>
+        </p>
+    </div>
+    {% endfor %}
+{% endblock %}

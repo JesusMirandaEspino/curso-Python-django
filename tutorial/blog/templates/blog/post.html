@@ -1,20 +1,11 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{post.title}}</title>
-</head>
-<body>
-    <main>
-        <h1>Bienvenidos a mi blog</h1>
-        <h2>Archivo personal de mis entradas</h2>
-        <div>
-            <h3>{{ post.title }}</h3>
-            <span class="date">{{ post.created|date:"SHORT_DATE_FORMAT" }}</span>
-            <p>{{ post.content }}</p>
-            <a href="/">Volver a la portada</a>
-        </div>
-    </main>
-</body>
-</html>
+{% extends 'blog/base.html' %}
+{% block title %} {{ post.title }} · Blog{% endblock %}
+
+{% block content %}
+<div>
+    <h3>{{ post.title }}</h3>
+    <span class="date">{{ post.created }}</span>
+    <p>{{ post.content }}</p>
+    <a href="/">Volver a la portada</a>
+</div>
+{% endblock %}
